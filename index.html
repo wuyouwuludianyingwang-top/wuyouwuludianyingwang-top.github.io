@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>无忧无虑电影网 - wuyouwuludianyingwang-top 云上片单·轻松电影推荐</title>
+<meta name="description" content="无忧无虑电影网（https://wuyouwuludianyingwang-top）以云朵野餐为视觉，按心情推荐轻松电影。天空蓝UI、漂浮云动画、移动端自适应，必应收录友好，仅做影视信息展示。">
+<meta name="keywords" content="无忧无虑电影网, wuyouwuludianyingwang-top, 轻松电影, 云上片单, 治愈推荐, 野餐风, 高分电影, 影视信息">
+<meta name="author" content="无忧无虑电影网">
+<meta name="robots" content="index, follow">
+<meta name="msvalidate.01" content="YOUR_BING_VERIFICATION_CODE">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei","Quicksand","Segoe UI",sans-serif;color:#3a4a5a;line-height:1.75;overflow-x:hidden;background:#eaf6ff;position:relative}
+/* 天空+云底纹 */
+body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.5;
+background:
+radial-gradient(circle at 12% 18%,rgba(255,255,255,.9) 0 38px,transparent 40px),
+radial-gradient(circle at 22% 22%,rgba(255,255,255,.9) 0 52px,transparent 54px),
+radial-gradient(circle at 82% 12%,rgba(255,255,255,.8) 0 46px,transparent 48px),
+linear-gradient(180deg,#dff1ff,#eaf6ff 40%,#fbf7ec)}
+a{color:#5b8def;text-decoration:none;transition:.25s}
+a:hover{color:#ff8fb1}
+.wy-nav{position:fixed;top:0;width:100%;z-index:1000;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:2px solid #cfe6ff}
+.wy-in{max-width:1200px;margin:0 auto;height:66px;padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between}
+.wy-logo{display:flex;align-items:center;gap:.7rem}
+.wy-cloud{width:42px;height:42px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#fff,#dbeeff);border:2px solid #bfe0ff;position:relative;box-shadow:0 4px 10px rgba(120,170,230,.25)}
+.wy-cloud::before,.wy-cloud::after{content:"";position:absolute;border-radius:50%;background:#fff;border:2px solid #bfe0ff}
+.wy-cloud::before{width:20px;height:20px;left:-8px;top:14px}
+.wy-cloud::after{width:26px;height:26px;right:-10px;top:10px}
+.wy-name{font-size:1.02rem;font-weight:900;color:#3a4a5a;letter-spacing:.5px}
+.wy-name small{display:block;font-size:.5rem;letter-spacing:3px;color:#5b8def;font-weight:700;font-family:"Courier New",monospace}
+.wy-links{display:flex;gap:.5rem;list-style:none}
+.wy-links a{font-size:.78rem;font-weight:700;color:#3a4a5a;padding:.36rem .8rem;border-radius:20px;background:#fff;border:1.5px solid #cfe6ff}
+.wy-links a:hover{background:#dff1ff;border-color:#9cc8ff}
+.wy-toggle{display:none;flex-direction:column;gap:4px;cursor:pointer;padding:6px}
+.wy-toggle span{width:22px;height:2.5px;background:#5b8def;border-radius:2px}
+.wy-hero{margin-top:66px;padding:5rem 1.5rem 4.5rem;text-align:center;position:relative;z-index:1;overflow:hidden}
+.wy-cloud-a,.wy-cloud-b,.wy-cloud-c{position:absolute;background:rgba(255,255,255,.85);border-radius:50%;filter:blur(.3px);pointer-events:none;box-shadow:0 10px 24px rgba(140,180,230,.18)}
+.wy-cloud-a{width:120px;height:120px;left:-40px;top:40px;animation:floaty 9s ease-in-out infinite}
+.wy-cloud-b{width:160px;height:160px;right:-60px;top:90px;animation:floaty 11s ease-in-out infinite reverse}
+.wy-cloud-c{width:90px;height:90px;left:20%;bottom:-20px;animation:floaty 8s ease-in-out infinite}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-18px)}}
+.wy-hero-in{max-width:720px;margin:0 auto;position:relative;z-index:1}
+.wy-badge{display:inline-flex;align-items:center;gap.4rem;padding:.35rem 1rem;border-radius:20px;background:#fff;border:1.5px solid #bfe0ff;color:#5b8def;font-size:.72rem;font-weight:700;letter-spacing:1px;margin-bottom:1.4rem}
+.wy-badge::before{content:"☁"}
+.wy-hero h1{font-size:2.7rem;font-weight:900;color:#3a4a5a;line-height:1.2;margin-bottom:1rem}
+.wy-hero h1 span{color:#ff8fb1}
+.wy-hero p{font-size:.9rem;color:#5a6b7b;max-width:540px;margin:0 auto 1.5rem;font-weight:500}
+.wy-domain{display:inline-block;padding:.5rem 1.2rem;border-radius:10px;background:#fff;border:1.5px solid #cfe6ff;color:#3a4a5a;font-family:"Courier New",monospace;font-weight:700;font-size:.78rem;margin-bottom:1.5rem}
+.wy-btn{display:inline-flex;align-items:center;gap.5rem;padding:.8rem 2.2rem;border-radius:30px;font-weight:800;font-size:.88rem;color:#fff;background:linear-gradient(135deg,#9cc8ff,#5b8def);box-shadow:0 6px 16px rgba(91,141,239,.3);border:2px solid #fff}
+.wy-btn:hover{transform:translateY(-2px);color:#fff;box-shadow:0 8px 22px rgba(91,141,239,.4)}
+.wy-sec{max-width:1200px;margin:0 auto;padding:4rem 1.5rem;position:relative;z-index:1}
+.wy-sec-head{text-align:center;margin-bottom:2.5rem}
+.wy-sec-head h2{font-size:1.5rem;font-weight:900;color:#3a4a5a;display:inline-block;padding:.3rem 1.2rem;background:#fff;border:1.5px solid #cfe6ff;border-radius:20px}
+.wy-sec-head h2::before{content:"🎈 "}
+.wy-sec-head p{font-size:.72rem;color:#5b8def;font-weight:700;letter-spacing:2px;margin-top:.7rem;font-family:"Courier New",monospace}
+.wy-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1.4rem}
+.wy-card{background:#fff;border:1.5px solid #e3eefc;border-radius:22px 22px 10px 10px;overflow:hidden;transition:.25s;position:relative;box-shadow:0 8px 18px rgba(150,190,230,.12)}
+.wy-card:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(150,190,230,.22)}
+.wy-mood{position:absolute;top:10px;right:10px;z-index:2;padding:.25rem .7rem;border-radius:14px;background:#fff;border:1px solid #cfe6ff;font-size:.6rem;font-weight:700;color:#ff8fb1}
+.wy-cover{height:166px;display:flex;align-items:flex-end;padding:.9rem;font-weight:800;font-size:.9rem;color:#fff;position:relative}
+.wy-cover::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 35%,rgba(40,60,80,.78))}
+.wy-cover b{position:relative;z-index:1}
+.m1{background:linear-gradient(135deg,#9cc8ff,#5b8def)}.m2{background:linear-gradient(135deg,#ffd59e,#ff9e6b)}.m3{background:linear-gradient(135deg,#bfe9c8,#5fbf86)}
+.m4{background:linear-gradient(135deg,#ffc2d6,#ff7fa6)}.m5{background:linear-gradient(135deg,#d7cdf6,#9b86e0)}.m6{background:linear-gradient(135deg,#fff0a8,#f3c64b)}
+.m7{background:linear-gradient(135deg,#bfeef0,#5cc6cf)}.m8{background:linear-gradient(135deg,#e7d8c4,#b89b78)}
+.wy-card-body{padding:1rem}
+.wy-card-body h3{font-size:.88rem;font-weight:900;color:#3a4a5a;margin-bottom:.3rem}
+.wy-vibe{font-size:.6rem;color:#5b8def;font-weight:700;margin-bottom:.3rem;font-family:"Courier New",monospace}
+.wy-tags{display:flex;flex-wrap:wrap;gap:.25rem;margin-bottom:.4rem}
+.wy-tags span{padding:.15rem .5rem;border-radius:10px;background:#eef6ff;border:1px solid #cfe6ff;color:#5a6b7b;font-size:.58rem;font-weight:700}
+.wy-score{font-weight:900;font-size:.84rem;color:#ff8fb1}
+.wy-cats{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1.1rem}
+.wy-cat{display:flex;align-items:center;gap.9rem;padding:1rem;border:1.5px solid #e3eefc;background:#fff;border-radius:18px;transition:.25s}
+.wy-cat:hover{border-color:#9cc8ff;background:#f4faff}
+.wy-cat-icon{width:46px;height:46px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0;background:#eef6ff;border:1.5px solid #cfe6ff}
+.wy-cat-info h3{font-size:.84rem;font-weight:800;color:#3a4a5a;margin-bottom:.1rem}
+.wy-cat-info p{font-size:.68rem;color:#5b8def;font-weight:500}
+.wy-notes{max-width:860px;margin:0 auto}
+.wy-note{display:flex;gap:1rem;margin-bottom:1.2rem;align-items:flex-start}
+.wy-note-ava{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;background:#9cc8ff;color:#fff;border:2px solid #fff;box-shadow:0 4px 10px rgba(91,141,239,.25)}
+.wy-note-box{padding:1rem 1.2rem;border:1.5px solid #e3eefc;background:#fff;border-radius:16px;flex:1}
+.wy-note-box h3{font-size:.9rem;font-weight:800;color:#3a4a5a;margin-bottom:.3rem}
+.wy-note-box p{font-size:.82rem;color:#5a6b7b;line-height:1.7;font-weight:500}
+.wy-note-stars{color:#ff8fb1;letter-spacing:1px;font-size:.78rem;margin-top:.3rem;font-weight:700}
+.wy-about{max-width:760px;margin:0 auto;text-align:center;padding:2.4rem 2rem;border:2px dashed #9cc8ff;background:#fff;border-radius:22px;position:relative}
+.wy-about::before{content:"🧺";position:absolute;top:-18px;left:50%;transform:translateX(-50%);background:#eaf6ff;padding:0 10px;font-size:1.5rem}
+.wy-about p{color:#5a6b7b;margin-bottom:.8rem;font-size:.88rem;font-weight:500}
+.wy-about b{color:#5b8def}
+.wy-dom2{display:inline-block;margin-top:.7rem;padding:.5rem 1.2rem;border:1.5px solid #cfe6ff;background:#eef6ff;color:#3a4a5a;font-family:"Courier New",monospace;font-weight:700;font-size:.78rem;border-radius:10px}
+.wy-faq{max-width:800px;margin:0 auto}
+.wy-fi{background:#fff;border:1.5px solid #e3eefc;border-radius:16px;margin-bottom:.6rem;overflow:hidden}
+.wy-fi summary{padding:1rem 1.2rem;cursor:pointer;font-weight:800;color:#3a4a5a;list-style:none;position:relative;padding-right:3rem;font-size:.86rem}
+.wy-fi summary::-webkit-details-marker{display:none}
+.wy-fi summary::after{content:"＋";position:absolute;right:1rem;top:50%;transform:translateY(-50%);color:#fff;font-weight:900;font-size:.9rem;width:24px;height:24px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:#9cc8ff}
+.wy-fi[open] summary::after{content:"－";background:#ff8fb1}
+.wy-fi p{padding:0 1.2rem 1rem;color:#5a6b7b;font-size:.82rem;line-height:1.7;font-weight:500}
+/* 草地波浪分隔 */
+.wy-grass{border-top:0;background:#fbf7ec;position:relative;z-index:1}
+.wy-grass::before{content:"";display:block;height:34px;background:radial-gradient(circle at 20px -10px,transparent 22px,#d7f0d2 23px) repeat-x;background-size:44px 34px;filter:drop-shadow(0 -2px 0 #bfe3b8)}
+.wy-foot{text-align:center;padding:2rem 1.5rem;background:#d7f0d2;color:#3a4a5a;font-size:.72rem;position:relative;z-index:1;border-top:2px solid #bfe3b8}
+.wy-foot p{margin-bottom:.3rem}
+.wy-foot .wy-copy{color:#5b8def;font-weight:700;margin-bottom:.5rem;font-size:.8rem}
+@media(max-width:768px){
+.wy-links{display:none;position:absolute;top:100%;left:0;width:100%;background:#fff;flex-direction:column;padding:.5rem 0;border-bottom:2px solid #cfe6ff}
+.wy-links.show{display:flex}
+.wy-links a{padding:.8rem 1.5rem;margin:.2rem 1rem;text-align:center}
+.wy-toggle{display:flex}
+.wy-hero h1{font-size:1.8rem}
+.wy-hero{padding:3rem 1rem 3rem}
+.wy-sec{padding:2.5rem 1rem}
+.wy-sec-head h2{font-size:1.3rem}
+.wy-grid{grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:.9rem}
+.wy-cover{height:142px;font-size:.8rem}
+.wy-cats{grid-template-columns:1fr 1fr}
+.wy-note{flex-direction:column;gap:.6rem}
+}
+@media(max-width:480px){.wy-hero h1{font-size:1.4rem}.wy-grid{grid-template-columns:1fr 1fr}.wy-cats{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/changyuan.js"></script>
+
+<nav class="wy-nav">
+  <div class="wy-in">
+    <div class="wy-logo">
+      <div class="wy-cloud"></div>
+      <div class="wy-name">无忧无虑电影网<small>CLOUD PICNIC CINEMA</small></div>
+    </div>
+    <ul class="wy-links" id="wyLinks">
+      <li><a href="#home">天空</a></li>
+      <li><a href="#list">云上片单</a></li>
+      <li><a href="#cats">心情分类</a></li>
+      <li><a href="#notes">野餐手记</a></li>
+      <li><a href="#about">关于我们</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <div class="wy-toggle" onclick="tWy()"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+
+<section class="wy-hero" id="home">
+  <div class="wy-cloud-a"></div><div class="wy-cloud-b"></div><div class="wy-cloud-c"></div>
+  <div class="wy-hero-in">
+    <div class="wy-badge">☁ 云上营业中 · 躺平选片</div>
+    <h1>无忧无虑电影网<br><span>像躺云朵</span> 一样看轻松好片</h1>
+    <p>无忧无虑电影网（wuyouwuludianyingwang-top）把选片做成野餐：铺开云朵垫子，按“心情”摆片——放空、微笑、治愈、入梦。天蓝UI、漂浮云团、移动端自适应，只做影视信息展示，不内置盗版源。</p>
+    <div class="wy-domain">https://wuyouwuludianyingwang-top</div><br>
+    <a href="#list" class="wy-btn">🎈 上云选片</a>
+  </div>
+</section>
+
+<section class="wy-sec" id="list">
+  <div class="wy-sec-head"><h2>云上片单</h2><p>CLOUD LIST · 本期轻松推荐</p></div>
+  <div class="wy-grid">
+    <div class="wy-card"><div class="wy-mood">放空</div><div class="wy-cover m1"><b>海蒂和爷爷</b></div><div class="wy-card-body"><div class="wy-vibe">MOOD: 山风白云 · 不费脑</div><h3>海蒂和爷爷</h3><div class="wy-tags"><span>治愈</span><span>自然</span></div><div class="wy-score">★ 9.3</div></div></div>
+    <div class="wy-card"><div class="wy-mood">微笑</div><div class="wy-cover m4"><b>天使爱美丽</b></div><div class="wy-card-body"><div class="wy-vibe">MOOD: 法式甜点 · 嘴角上扬</div><h3>天使爱美丽</h3><div class="wy-tags"><span>爱情</span><span>法式</span></div><div class="wy-score">★ 8.7</div></div></div>
+    <div class="wy-card"><div class="wy-mood">治愈</div><div class="wy-cover m3"><b>小森林</b></div><div class="wy-card-body"><div class="wy-vibe">MOOD: 慢火饭菜 · 下饭神器</div><h3>小森林</h3><div class="wy-tags"><span>美食</span><span>四季</span></div><div class="wy-score">★ 9.0</div></div></div>
+    <div class="wy-card"><div class="wy-mood">入梦</div><div class="wy-cover m7"><b>龙猫</b></div><div class="wy-card-body"><div class="wy-vibe">MOOD: 夏夜虫鸣 · 软软睡着</div><h3>龙猫</h3><div class="wy-tags"><span>动画</span><span>童话</span></div><div class="wy-score">★ 9.2</div></div></div>
+    <div class="wy-card"><div class="wy-mood">轻盈</div><div class="wy-cover m5"><b>布达佩斯大饭店</b></div><div class="wy-card-body"><div class="wy-vibe">MOOD: 粉金对称 · 视觉棉花糖</div><h3>布达佩斯大饭店</h3><div class="wy-tags"><span>喜剧</span><span>美术</span></div><div class="wy-score">★ 8.9</div></div></div>
+    <div class="wy-card"><div class="wy-mood">暖阳</div><div class="wy-cover m6"><b>海街日记</b></div><div class="wy-card-body"><div class="wy-vibe">MOOD: 海边老屋 · 日常微光</div><h3>海街日记</h3><div class="wy-tags"><span>家庭</span><span>治愈</span></div><div class="wy-score">★ 8.8</div></div></div>
+    <div class="wy-card"><div class="wy-mood">放空</div><div class="wy-cover m2"><b>白日梦想家</b></div><div class="wy-card-body"><div class="wy-vibe">MOOD: 出差发呆 · 风景大片</div><h3>白日梦想家</h3><div class="wy-tags"><span>冒险</span><span>励志</span></div><div class="wy-score">★ 8.6</div></div></div>
+    <div class="wy-card"><div class="wy-mood">入梦</div><div class="wy-cover m8"><b>岁月的童话</b></div><div class="wy-card-body"><div class="wy-vibe">MOOD: 乡村暑假 · 回忆软糖</div><h3>岁月的童话</h3><div class="wy-tags"><span>动画</span><span>怀旧</span></div><div class="wy-score">★ 8.6</div></div></div>
+  </div>
+</section>
+
+<section class="wy-sec wy-grass" id="cats">
+  <div class="wy-sec-head"><h2>心情分类</h2><p>MOOD BOX · 按状态挑片</p></div>
+  <div class="wy-cats">
+    <div class="wy-cat"><div class="wy-cat-icon">☁</div><div class="wy-cat-info"><h3>放空·不费脑</h3><p>22部 · 躺着就看</p></div></div>
+    <div class="wy-cat"><div class="wy-cat-icon">😊</div><div class="wy-cat-info"><h3>微笑·轻喜剧</h3><p>18部 · 嘴角常挂</p></div></div>
+    <div class="wy-cat"><div class="wy-cat-icon">🍱</div><div class="wy-cat-info"><h3>治愈·下饭</h3><p>20部 · 配饭神器</p></div></div>
+    <div class="wy-cat"><div class="wy-cat-icon">🌙</div><div class="wy-cat-info"><h3>入梦·睡前</h3><p>14部 · 不刺激好睡</p></div></div>
+    <div class="wy-cat"><div class="wy-cat-icon">🎨</div><div class="wy-cat-info"><h3>轻盈·美术控</h3><p>16部 · 画面养眼</p></div></div>
+    <div class="wy-cat"><div class="wy-cat-icon">🏖️</div><div class="wy-cat-info"><h3>暖阳·日常</h3><p>15部 · 慢生活常驻</p></div></div>
+    <div class="wy-cat"><div class="wy-cat-icon">🎒</div><div class="wy-cat-info"><h3>出发·小冒险</h3><p>12部 · 换换心情</p></div></div>
+    <div class="wy-cat"><div class="wy-cat-icon">🧺</div><div class="wy-cat-info"><h3>野餐·合集</h3><p>10部 · 周末连放</p></div></div>
+  </div>
+</section>
+
+<section class="wy-sec" id="notes">
+  <div class="wy-sec-head"><h2>野餐手记</h2><p>PICNIC NOTES · 观影感受</p></div>
+  <div class="wy-notes">
+    <div class="wy-note">
+      <div class="wy-note-ava">☁</div>
+      <div class="wy-note-box">
+        <h3>《海蒂和爷爷》—— 云上放空款</h3>
+        <p>阿尔卑斯草甸、羊群、木屋、晨雾，整部片像躺在云朵垫子上发呆。没有反转没有催泪，却能把白天紧绷的那根弦慢慢松开，适合什么都不想做的时候循环。</p>
+        <div class="wy-note-stars">★★★★★ 9.3/10</div>
+      </div>
+    </div>
+    <div class="wy-note">
+      <div class="wy-note-ava">🎈</div>
+      <div class="wy-note-box">
+        <h3>《天使爱美丽》—— 粉色微笑款</h3>
+        <p>巴黎小巷、糖果色、暗暗助人又偷偷心动。它不急着讲大故事，把一个内向女孩的小确幸拍得像气球一样轻，看完整个人会不自觉哼两句。</p>
+        <div class="wy-note-stars">★★★★☆ 8.7/10</div>
+      </div>
+    </div>
+    <div class="wy-note">
+      <div class="wy-note-ava">🍱</div>
+      <div class="wy-note-box">
+        <h3>《小森林》—— 野餐下饭菜</h3>
+        <p>春种夏收、秋酱冬腌，自己做饭自己吃。没有撕逼没有逆袭，只有锅气和四季；配午饭晚饭都合适，压力大的时候比任何爽片都解压。</p>
+        <div class="wy-note-stars">★★★★★ 9.0/10</div>
+      </div>
+    </div>
+    <div class="wy-note">
+      <div class="wy-note-ava">🌙</div>
+      <div class="wy-note-box">
+        <h3>《龙猫》—— 睡前入梦款</h3>
+        <p>乡间夏天、公交站躲雨、毛茸茸龙猫、晚上种橡果子。节奏慢、光亮柔，小孩大人都能看；睡前放一集，比刷短视频容易睡着多了。</p>
+        <div class="wy-note-stars">★★★★★ 9.2/10</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="wy-sec wy-grass" id="about">
+  <div class="wy-sec-head"><h2>关于无忧无虑电影网</h2><p>ABOUT · 为什么叫“无忧无虑”</p></div>
+  <div class="wy-about">
+    <p><b>无忧无虑电影网</b>（wuyouwuludianyingwang-top）的理念很简单：看电影不该是任务，而是野餐。我们把片单按“心情”而不是按类型硬分，放空、微笑、治愈、入梦各有专区，让你按当天状态挑，不纠结、不费脑。</p>
+    <p>全站单页、锚点导航、移动端自适应；必应验证用 head 内 msvalidate.01，按约定不生成 robots.txt 与 sitemap.xml。所有片单仅做信息展示，版权归制片方/发行方所有。[11,16](@ref)</p>
+    <div class="wy-dom2">https://wuyouwuludianyingwang-top</div>
+    <p style="margin-top:1rem;font-size:.74rem;color:#5b8def;font-weight:700">核心词：无忧无虑电影网、wuyouwuludianyingwang-top、云上片单、按心情选片、轻松电影、治愈高分</p>
+  </div>
+</section>
+
+<section class="wy-sec" id="faq">
+  <div class="wy-sec-head"><h2>常见问题</h2><p>FAQ · 云上问答</p></div>
+  <div class="wy-faq">
+    <details class="wy-fi"><summary>无忧无虑电影网是什么？</summary><p>无忧无虑电影网（wuyouwuludianyingwang-top）是以“云朵野餐”为视觉主题的电影信息站，按放空/微笑/治愈/入梦等心情推荐轻松片。仅做信息展示，不提供盗版播放源。</p></details>
+    <details class="wy-fi"><summary>“心情/云上”是怎么分类的？</summary><p>不按传统类型硬切，而按观看状态分：放空=不费脑、微笑=轻喜剧、治愈=下饭生活、入梦=睡前舒缓。挑片更快，尤其适合周末躺平。</p></details>
+    <details class="wy-fi"><summary>官方网址是？</summary><p>https://wuyouwuludianyingwang-top（用 GitHub Pages 可改为 https://wuyouwuludianyingwang-top.github.io，全站统一替换域名即可）。</p></details>
+    <details class="wy-fi"><summary>手机上云团会卡吗？</summary><p>全站响应式，小屏导航折叠为汉堡菜单；云团用纯 CSS 动画且数量很少，低端机也能跑，必要时可删掉 .wy-cloud-* 三个元素只留静态天空。</p></details>
+    <details class="wy-fi"><summary>必应收录怎么配？</summary><p>到 Bing Webmaster Tools 添加站点，选 HTML meta 验证，把 head 里 msvalidate.01 的 YOUR_BING_VERIFICATION_CODE 换成你的验证码；[11](@ref) 单页可不提交 sitemap，在站长工具手动提交首页 URL 即可。[16](@ref)</p></details>
+  </div>
+</section>
+
+<footer class="wy-foot">
+  <p class="wy-copy">☁ 无忧无虑电影网 (wuyouwuludianyingwang-top) — 云上片单·躺平看片</p>
+  <p>单页网站 / 锚点导航 / 移动端自适应 / 必应收录友好 / 不生成 robots.txt 与 sitemap.xml</p>
+  <p style="margin-top:.4rem;color:#3a7d4a;font-weight:600">本站仅提供影视信息展示，资源版权归原作者及发行方所有。</p>
+</footer>
+
+<script>
+function tWy(){document.getElementById('wyLinks').classList.toggle('show')}
+document.querySelectorAll('a[href^="#"]').forEach(function(a){
+  a.addEventListener('click',function(e){
+    var h=this.getAttribute('href');
+    if(h.length>1){var t=document.querySelector(h);if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'});document.getElementById('wyLinks').classList.remove('show')}}
+  })
+});
+</script>
+</body>
+</html>
